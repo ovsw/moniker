@@ -4,8 +4,8 @@ How the engineering skills should consume this repo's domain documentation when 
 
 ## Before exploring, read these
 
-- **`CONTEXT.md`** at the repo root, or
-- **`CONTEXT-MAP.md`** at the repo root if it exists: it points at one `CONTEXT.md` per context. Read each one relevant to the topic.
+- **`GLOSSARY.md`** at the repo root, or
+- **`GLOSSARY-MAP.md`** at the repo root if it exists: it points at one `GLOSSARY.md` per context. Read each one relevant to the topic.
 - **`docs/adr/`**: read ADRs that touch the area you're about to work in. In multi-context repos, also check `src/<context>/docs/adr/` for context-scoped decisions.
 
 If any of these files do not exist, **proceed silently**. Do not flag their absence or suggest creating them upfront. The `/domain-modeling` skill creates them when terms or decisions are resolved.
@@ -16,31 +16,31 @@ Single-context repo (most repos):
 
 ```
 /
-├── CONTEXT.md
+├── GLOSSARY.md
 ├── docs/adr/
 │   ├── 0001-event-sourced-orders.md
 │   └── 0002-postgres-for-write-model.md
 └── src/
 ```
 
-Multi-context repo (presence of `CONTEXT-MAP.md` at the root):
+Multi-context repo (presence of `GLOSSARY-MAP.md` at the root):
 
 ```
 /
-├── CONTEXT-MAP.md
+├── GLOSSARY-MAP.md
 ├── docs/adr/                          ← system-wide decisions
 └── src/
     ├── ordering/
-    │   ├── CONTEXT.md
+    │   ├── GLOSSARY.md
     │   └── docs/adr/                  ← context-specific decisions
     └── billing/
-        ├── CONTEXT.md
+        ├── GLOSSARY.md
         └── docs/adr/
 ```
 
 ## Use the glossary's vocabulary
 
-When your output names a domain concept (in an issue title, a refactor proposal, a hypothesis, or a test name), use the term defined in `CONTEXT.md`. Do not use a synonym the glossary explicitly avoids.
+When your output names a domain concept (in an issue title, a refactor proposal, a hypothesis, or a test name), use the term defined in `GLOSSARY.md`. Do not use a synonym the glossary explicitly avoids.
 
 If the concept is not in the glossary, reconsider whether the project already has a suitable term. If not, note the gap for `/domain-modeling`.
 
